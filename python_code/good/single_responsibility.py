@@ -20,7 +20,7 @@ class IEmail(object):
         pass
 
     @abstractmethod
-    def setContent(self, content):
+    def set_content(self, content):
         pass
 
 class IContent(object):
@@ -58,7 +58,7 @@ class Email(IEmail):
         else:
             self.__receiver = receiver
 
-    def setContent(self, content):
+    def set_content(self, content):
         self.__content = content.getString()
 
     def __repr__(self):
@@ -72,7 +72,7 @@ def main():
     email.set_sender('qmal')
     email.set_receiver('james')
     content = MyContent('Hello, there!')
-    email.setContent(content)
+    email.set_content(content)
     print email
 
 if __name__ == '__main__':
