@@ -27,7 +27,7 @@ class IContent(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def getString(self):
+    def get_string(self):
         pass
 
 class MyContent(IContent):
@@ -35,7 +35,7 @@ class MyContent(IContent):
     def __init__(self, content):
         self.content = content
 
-    def getString(self):
+    def get_string(self):
         return "<MyML>{}</MyML>".format(self.content)
 
 class Email(IEmail):
@@ -59,7 +59,7 @@ class Email(IEmail):
             self.__receiver = receiver
 
     def set_content(self, content):
-        self.__content = content.getString()
+        self.__content = content.get_string()
 
     def __repr__(self):
 
@@ -73,7 +73,7 @@ def main():
     email.set_receiver('james')
     content = MyContent('Hello, there!')
     email.set_content(content)
-    print email
+    print(email)
 
 if __name__ == '__main__':
     main()
